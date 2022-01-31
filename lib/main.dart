@@ -39,7 +39,7 @@ class CustomDialogWidget extends StatelessWidget {
   void showCustomDialog(BuildContext context) => showDialog(
     builder: (context) => Dialog(
       shape: RoundedRectangleBorder(
-        // borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(5),
       ),
       child: Padding(
         padding: const EdgeInsets.all(0.0),
@@ -100,7 +100,7 @@ class CustomDialogWidget extends StatelessWidget {
             Divider(
                 color: Colors.grey
             ),
-            SizedBox(height: 12),
+            // SizedBox(height: 5),
             Container(
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -115,6 +115,7 @@ class CustomDialogWidget extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  margin:EdgeInsets.fromLTRB(0, 0, 8, 0),
                  child: ElevatedButton(
                    style: ElevatedButton.styleFrom(
                      primary: Colors.indigoAccent,),
@@ -384,37 +385,46 @@ class MyForm extends State<Page3> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: <Widget>[
-                                TextButton(
-                                  child: const Text("Prev"),
-                                  style: TextButton.styleFrom(
-                                    primary: Colors.grey,
-                                    backgroundColor: Color(0xffe8e8e8),
-                                    side: const BorderSide(
-                                      width: 1,
-                                      color: Colors.black12,
+                                Container(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 3, 0),
+                                  child: TextButton(
+
+                                    child: const Text("Prev"),
+                                    style: TextButton.styleFrom(
+                                      primary: Colors.grey,
+                                      backgroundColor: Color(0xffe8e8e8),
+                                      side: const BorderSide(
+                                        width: 1,
+                                        color: Colors.black12,
+                                      ),
                                     ),
+                                    onPressed: () =>
+                                    {
+                                      print("Next Pressed"),
+                                    },
                                   ),
-                                  onPressed: () =>
-                                  {
-                                    print("Next Pressed"),
-                                  },
-                                ),
-                                TextButton(
-                                  child: const Text("Next"),
-                                  style: TextButton.styleFrom(
-                                    primary: Colors.black,
-                                    backgroundColor: Color(0xffffcc00),
-                                    onSurface: Colors.grey,
-                                    side: const BorderSide(
-                                      width: 1,
-                                      color: Colors.black12,
+                                )
+                                ,
+                                Container(
+
+                                  child: TextButton(
+                                    child: const Text("Next"),
+                                    style: TextButton.styleFrom(
+                                      primary: Colors.black,
+                                      backgroundColor: Color(0xffffcc00),
+                                      onSurface: Colors.grey,
+                                      side: const BorderSide(
+                                        width: 1,
+                                        color: Colors.black12,
+                                      ),
                                     ),
+                                    onPressed: () =>
+                                    {
+                                      print("Next Pressed"),
+                                    },
                                   ),
-                                  onPressed: () =>
-                                  {
-                                    print("Next Pressed"),
-                                  },
-                                ),
+                                )
+
                               ],
                             ),
                           ),
@@ -426,6 +436,7 @@ class MyForm extends State<Page3> {
                           ),
 
                           Container(
+                            margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               mainAxisAlignment: MainAxisAlignment.end,
